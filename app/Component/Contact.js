@@ -3,7 +3,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import 'react-phone-number-input/style.css'; // Import the CSS
 import PhoneInput from 'react-phone-number-input';
 import emailjs from '@emailjs/browser';
-import { useFormik } from 'Formik';
+// import { useFormik } from 'Formik';
+// Example import statement
+import { Formik, Field, ErrorMessage } from 'formik';
+
 // import { signUpSchema } from './index'
 import * as Yup from "yup";
 
@@ -29,7 +32,7 @@ const Form = () => {
     const [phoneNumber, setPhoneNumber] = useState(); // Initialize state for the phone number
     const [submissionStatus, setSubmissionStatus] = useState(null);
 
-    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
+    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = Formik({
         initialValues: initialValues,
         validationSchema: signUpSchema,
         onSubmit: (values, action) => {
@@ -83,12 +86,12 @@ const Form = () => {
                             id="fullname"
                             placeholder="Full Name"
                             autoComplete="off"
-                            value={values.fullname}
+                            value={values?.fullname}
                             onChange={handleChange}
                             onBlur={handleBlur}
                         />
-                        {errors.fullname && touched.fullname ?
-                            <p className='form-error text-[#fc2001] m-2'>{errors.fullname}</p> : null}
+                        {errors?.fullname && touched?.fullname ?
+                            <p className='form-error text-[#fc2001] m-2'>{errors?.fullname}</p> : null}
                     </div>
                     <div className='input_email basis-full sm:basis-1/3'>
                         <input className='w-[100%] border border-[#C5CEE0] px-3 bg-[#F7F9FC] sm:p-3 rounded-md h-[42px] md:h-[45px] mb-1'
@@ -97,12 +100,12 @@ const Form = () => {
                             id="email"
                             placeholder="Email"
                             autoComplete="off"
-                            value={values.email}
+                            value={values?.email}
                             onChange={handleChange}
                             onBlur={handleBlur}
                         />
-                        {errors.email && touched.email ? <p className='form-error text-[#fc2001] m-2'>
-                            {errors.email}</p> : null}
+                        {errors?.email && touched?.email ? <p className='form-error text-[#fc2001] m-2'>
+                            {errors?.email}</p> : null}
                     </div>
 
                     <div className='input_phone basis-full sm:basis-1/3'>
@@ -129,8 +132,8 @@ const Form = () => {
                                 onBlur={handleBlur}
                             />
                         </div>
-                        {errors.phone && touched.phone ?
-                            <p className='form-error text-[#fc2001] m-2'>{errors.phone}</p> : null}
+                        {errors?.phone && touched?.phone ?
+                            <p className='form-error text-[#fc2001] m-2'>{errors?.phone}</p> : null}
                     </div>
 
                 </div>
@@ -138,7 +141,7 @@ const Form = () => {
                     <textarea
                         className='rounded-md mb-2 bg-[#F7F9FC] border border-[#C5CEE0] form_textarea w-[100%] px-3 py-2 sm:p-3 rounded-md h-[70px] md:h-[120px]' name="postContent"
                         placeholder='Query' rows={4} cols={40}
-                        value={values.postContent}
+                        value={values?.postContent}
                         onChange={handleChange}
                         onBlur={handleBlur} required
                     />
