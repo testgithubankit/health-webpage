@@ -2,26 +2,172 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+p {
+    color: #10142699;
   }
+  /*Scroller CSS*/
+  /* Scroller CSS */
+/* Custom scrollbar styles */
+.custom-scrollbar {
+  scrollbar-width: 20px;
+  scrollbar-color: #c5cee0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.custom-scrollbar::-webkit-scrollbar {
+  width: 20px;
 }
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #c5cee0;
+  height: 3px;
+  width: 20px;
+  border-radius: 12px;
+}
+
+
+  /*End Scroller CSS*/
+  .hwFilterBox {
+    padding: 8px 6px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 8px;
+    height: 90px;
+    max-width: 80px;
+    min-width: 80px;
+    display: grid;
+    justify-content: center;
+    border: 2px solid #edf1f7;
+    color: #101426;
+    background: #ffffff; 
+  }
+  .hwFilterBox img {
+    margin: 0 auto;
+  }
+  .hwFilterBox span {
+    line-height: 1.2;
+    font-size: 14px;
+    font-weight: 400;
+    display: inline-block;
+    text-align: center;
+  }
+  .sec_title {
+    color: rgb(16 20 38 / 80%);  
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3em;
+  }
+  .sec_title:after {
+      position: absolute;
+      bottom: 0px;
+      width: 121px;
+      height: 6px;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #8E59F7 0.56%, #597EF7 100%);
+      content: "";
+      left: 0;
+  }
+  .sec_title.center:after { 
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+  }
+  .sec_title.left:after { 
+      left: 0;
+      right: auto;
+      margin: 0;
+  }
+/* Home Slider Sectiion css */
+#hwSearchFilter {
+	  background-image: url(https://househealthinc.com/wp-content/uploads/2021/09/Background.svg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+#hwSearchFilter .carousel .slider-wrapper {    
+    max-width: 80%;
+    padding-bottom: 25px;
+}
+#hwSearchFilter .carousel .control-dots {
+    bottom: -15px;
+}
+.carousel .control-next.control-arrow:before,
+.carousel .control-prev.control-arrow:before {
+  background-color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 100px;
+}
+#hwSearchFilter .carousel .control-dots .dot {
+    border-radius: 100px;
+    width: 12px;
+    height: 4px;
+    margin: 2px;
+}
+#hwSearchFilter .carousel.carousel-slider .control-arrow:hover {
+    background: transparent;
+}
+/* Compare Table CSS */
+
+/* ### End Compare Table */
+
+/*Loader CSS goes here*/
+.loader-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%, -50%);
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader {
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 
+@media screen and (max-width: 1024px){
+  .sec_title {
+    font-size: 26px;
+  }
+  
+}
+  @media screen and (max-width: 768px) {
+    .sec_title {
+      font-size: 20px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    #hwSearchFilter .carousel .slider-wrapper {    
+        max-width: 90%;
+        padding-bottom: 15px;
+    }
+    #hwSearchFilter .carousel .control-dots {
+        bottom: 0;
+    }
+    #hwSearchFilter .carousel .thumbs-wrapper {
+        margin: 7px;
+    }
+  }
+  @media screen and (max-width: 499px) {
+    .sec_title {
+      font-size: 20px;
+    }
+    .sec_title {
+      margin-bottom: 10px;
+    }
+  }
