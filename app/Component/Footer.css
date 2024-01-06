@@ -1,0 +1,189 @@
+.site-footer {
+    background-image: url('/hwfooter-bg.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    color: #fff;
+    position: relative;
+    padding: 70px 15px 50px 15px;
+}
+.foot_title {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    padding-bottom: 10px;
+}
+.footer_left_dec {
+    position: relative;
+    padding-bottom: 15px;
+}
+.HWfootForm {    
+    background: #fff;
+    color: rgb(16 20 38 / 80%);
+    border-radius: 20px;
+    box-shadow: 0px 4px 20px 10px rgba(32, 32, 37, 0.08);
+    color: rgb(16 20 38 / 80%);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    padding: 45px 45px 45px 45px;
+    margin: 0 auto 100px;
+}
+/* Default styles for desktop */
+.HWfootContact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Adjust the gap between form elements */
+  padding-top: 25px;
+}
+
+.CFname {
+  flex: 1 1 46%; /* 50% width */
+}
+
+.CFemail {
+  flex: 0 0 30%; /* 30% width */
+}
+
+.CFphone {
+  flex: 0 0 20%; /* 20% width */
+}
+
+.CFquery {
+  flex: 1 1 100%; /* 100% width */
+}
+
+.CFsubmit_btn {
+  flex: 0 1 46%; /* 50% width */
+}
+
+/* Style for form labels */
+.HWfootContact label {
+  display: none;
+  margin-bottom: 5px;
+}
+
+/* Style for form inputs and textarea */
+.HWfootContact input[type="text"],
+.HWfootContact input[type="email"],
+.HWfootContact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #69727d;
+  background-color: #F7F9FC;
+  border-color: #C5CEE0;  
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+/* Style for the submit button */
+.HWfootContact button[type="submit"] {
+  background-color: #6e2feb;
+  box-shadow: 4px 8px 11px 0px rgba(46.999999999999986, 84.00000000000011, 235, 0.2);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+}
+
+/* Style for the submit button on hover */
+.HWfootContact button[type="submit"]:hover {
+  background-color: #3c1faf;
+}
+ul.footer_links {
+    padding-top: 25px;
+}
+ul.footer_links li {
+    padding-bottom: 15px;
+}
+.footer_left_dec:after,
+.foot_title:after {
+    position: absolute;
+    bottom: 0px;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #8E59F7 0.56%, #597EF7 100%);
+    content: "";
+    left: 0;
+}
+/* Default styles */
+.footer_inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.footer_left {
+  flex: 1; /* Takes up all available space */
+}
+
+.footer_about,
+.footerEcosystem {
+  flex: 0 0 calc(25% - 12.5px); /* 50% width with 25px gap */
+}
+/* Default styles for desktop */
+.btmfoot_links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.btmfoot_links li {
+  display: inline;
+  margin-right: 10px; /* Adjust the spacing between list items */
+  padding-right: 10px; /* Add padding between the list items and the border */
+  border-right: 2px solid rgba(255, 255, 255, 0.6); /* Add a right border to each list item */
+}
+.footer_bottom {
+    text-align: right;
+    padding: 50px 0 0;
+}
+/* Remove the border from the last list item */
+.btmfoot_links li:last-child {
+  border-right: none;
+}
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .CFname,
+  .CFemail,
+  .CFphone,
+  .CFquery,
+  .CFsubmit_btn {
+    flex: 0 0 100%; /* 100% width on phone devices */
+  }
+  .footer_about,
+  .footerEcosystem {
+    gap: 15px;
+    flex: 0 0 45%; /* 50% width on mobile */
+  }
+  .HWfootForm {
+    margin-bottom: 40px;
+}
+  .site-footer {
+    background-position: bottom center;
+    padding-top: 20px;
+  }
+  .footer_left {
+    flex: 0 0 100%; /* 100% width on mobile */
+  }
+  .foot_title {
+    font-size: 16px;
+  }
+  .btmfoot_links {
+    text-align: center; /* Center-align the list items on mobile */
+  }
+  .HWfootForm {
+    padding: 40px 25px;
+  }
+  .btmfoot_links li {
+    display: inline-block;
+    margin: 5px; /* Add vertical spacing between list items on mobile */
+    border-right: none; /* Remove the right border on mobile */
+  }
+}
