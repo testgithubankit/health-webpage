@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-// import Header from './Components/Header'
+import Header from './Component/Header'
 // import Footer from './Components/Footer'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className} style={{ background: 'linear-gradient(180deg, #E4D6FF23 9.91%, #E4D6FF57 62.4%)' }}>
-        {/* <Header /> */}
+        <Header/>
         {children}
         {/* <Footer /> */}
       </body>

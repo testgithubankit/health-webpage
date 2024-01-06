@@ -1,0 +1,13 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="30.0011" cy="29.9992" r="20.5714" fill="#F5F0FF"/>
+<path d="M24.4 26C24.5591 26 24.7117 25.9368 24.8243 25.8243C24.9368 25.7117 25 25.5591 25 25.4V21.6C25 21.4409 25.0632 21.2883 25.1757 21.1757C25.2883 21.0632 25.4409 21 25.6 21H34.4C34.4788 21 34.5568 21.0155 34.6296 21.0457C34.7024 21.0758 34.7685 21.12 34.8243 21.1757C34.88 21.2315 34.9242 21.2976 34.9543 21.3704C34.9845 21.4432 35 21.5212 35 21.6V25.4C35 25.5591 35.0632 25.7117 35.1757 25.8243C35.2883 25.9368 35.4409 26 35.6 26H37.4C37.4788 26 37.5568 26.0155 37.6296 26.0457C37.7024 26.0758 37.7685 26.12 37.8243 26.1757C37.88 26.2315 37.9242 26.2976 37.9543 26.3704C37.9845 26.4432 38 26.5212 38 26.6V38.4C38 38.4788 37.9845 38.5568 37.9543 38.6296C37.9242 38.7024 37.88 38.7685 37.8243 38.8243C37.7685 38.88 37.7024 38.9242 37.6296 38.9543C37.5568 38.9845 37.4788 39 37.4 39H22.6C22.4409 39 22.2883 38.9368 22.1757 38.8243C22.0632 38.7117 22 38.5591 22 38.4V26.6C22 26.4409 22.0632 26.2883 22.1757 26.1757C22.2883 26.0632 22.4409 26 22.6 26H24.4V26Z" stroke="#8E59F7" stroke-width="1.5"/>
+<path d="M29.9922 26V28M27.9922 26H29.9922H27.9922ZM31.9922 26H29.9922H31.9922ZM29.9922 26V24V26Z" stroke="#8E59F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34 35.011L34.01 35" stroke="#8E59F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34 31.011L34.01 31" stroke="#8E59F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M30 31.011L30.01 31" stroke="#8E59F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26 31.011L26.01 31" stroke="#8E59F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26 35.011L26.01 35" stroke="#8E59F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M30 35.011L30.01 35" stroke="#8E59F7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="30.0004" cy="29.9994" r="25.2143" stroke="#E4D6FF"/>
+<circle cx="30" cy="30" r="29.5" stroke="#E4D6FF"/>
+</svg>

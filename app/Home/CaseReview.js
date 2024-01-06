@@ -1,5 +1,4 @@
 const CaseReview = () => {
-
 	const CRhead = {
 		title: "Submit a Case for Review",
 		decription: "With our case review, we enable the patients and their next of kin to get an expert opinion without any geographical boundaries."
@@ -9,23 +8,23 @@ const CaseReview = () => {
 	const casereviewBlocks = [
 	  {
 	    id: 1,
-	    imageUrl: '../images/home/hwsignup.png',
+	    imageUrl: './images/hwsignup.png',
 	    description: 'You signup and submit \n your case',
 	    
 	  },
 	  {
 	    id: 2,
-	    imageUrl: '../images/home/timely.svg',
+	    imageUrl: './images/home/timely.svg',
 	    description: 'You get timely updates and status reports for your case',
 	  },
 	  {
 	    id: 3,
-	    imageUrl: '../images/home/review.svg',
+	    imageUrl: './images/home/review.svg',
 	    description: 'Our team of providers will review the case & recommend suitable treatment',
 	  },
 	  {
 	    id: 4,
-	    imageUrl: '../images/home/suggestnext.svg',
+	    imageUrl: './images/home/suggestnext.svg',
 	    description: 'We suggest the next course of action',
 	  },
 	];
