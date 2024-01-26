@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Howtoget = () => {
-    const CRhead = {
+    const CRhead  = {
 		title: "How to get a Case reviewed?",
 		decription: "Case review is for patients and next of kin, to be able to get expert opinion with no geographical boundaries."
 	}
