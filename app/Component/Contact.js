@@ -17,7 +17,7 @@ const initialValues = {
     postContent: ""
 }
 export const signUpSchema = Yup.object({
-    fullname: Yup.string()
+    fullname : Yup.string()
     .matches(/^[A-Za-z ]*$/, "Only characters and spaces are allowed")
     .min(5, "Full name must be at least 5 characters")
     .max(25, "Full name must be at most 25 characters")
