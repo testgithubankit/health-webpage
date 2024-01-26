@@ -3,7 +3,7 @@ import React from 'react'
 const CaseReviewhead = () => {
   const hwproviderBlocks = [
 	  {
-	    id: 1,
+	    id: 1 ,
       title: 'The best doctors will review your case',
 	    imageUrl: '../Images/casereview/hwCR01.png',
 	    description: 'Our team of expert doctors will review your case for freeand will guide you on further steps.',
