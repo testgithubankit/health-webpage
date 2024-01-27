@@ -5,6 +5,8 @@ import { RiSearchLine } from 'react-icons/ri';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import HWLoader from './HWLoader';
+import Link from 'next/link';
+
 
 const FilterBox = ({ title }) => {
   const [selectImage, setSelectImage] = useState('Kidney')
@@ -616,10 +618,23 @@ const HWSearch = () => {
         </div>
       )}
       <div className='px-4 sm:px-8 mb-2'>
-        <a href='/Searchresults/'
+        {/* <a href='/Searchresults/'
           className='inline-block text-center px-3 py-3 rounded-md bg-[#6e2feb] shadow-2xl
       hover:bg-[#3c1faf] ease-in duration-300 font-bold text-[#fff] cursor-pointer w-[100%]'
-        >Search</a>
+        >Search</a> */}
+        <Link className='inline-block text-center px-3 py-3 rounded-md bg-[#6e2feb] shadow-2xl
+      hover:bg-[#3c1faf] ease-in duration-300 font-bold text-[#fff] cursor-pointer w-[100%]'
+        href={{
+          pathname: '/searchView',
+          query: {
+            search: `type=${type}&searchFor=${searchFor}&organ=${organ}`,
+          },
+        }}
+      >
+        <button style={Object.assign({}, searchButtonStyle, organ && searchButtonHoverStyle)} onClick={handleSubmit}> 
+          Search
+        </button>
+      </Link>
       </div>
 
       <div className=''>
