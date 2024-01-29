@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { IoClose } from 'react-icons/io5';
 import { RiSearchLine } from 'react-icons/ri';
 import Box from '@mui/material/Box';
@@ -91,7 +92,6 @@ const FilterBox = ({ title }) => {
 
 const Filter = ({ title }) => {
   const [selectImage1, setSelectImage1] = useState('Lungs')
-  const [organ, setOrgan] = useState(''); 
   return (
     <div className='mt-4'>
       <div
@@ -286,6 +286,12 @@ const HWSearch = () => {
   const [searchFor, setSearchFor] = useState('');
   const [organ, setOrgan] = useState(''); 
   const [error, setError] = useState('');
+  
+
+
+  const decodedtype = type ? decodeURIComponent(type) : '';
+  const decodedSearchFor = searchFor ? decodeURIComponent(searchFor) : '';
+  const decodedOrgan = organ ? decodeURIComponent(organ) : '';
 
   // useEffect(() => {
   //   const fetchApiData = async () => {
@@ -454,9 +460,7 @@ const HWSearch = () => {
     setselectedMutiple(search);
     setSearchFor(search); // Set the type when an option is selected
   };
-
   
-
   const handleInputChange = (e) => {
     const input = e.target.value;
     setSelectedZip(input);
@@ -663,7 +667,7 @@ const HWSearch = () => {
         href={{
           pathname: '/Searchresults',
           query: {
-            search:`type=${type}&searchFor=${searchFor}&organ=${organ}`,
+            search: `type=${type}&searchFor=${searchFor}&organ=${organ}`,
           },
         }}
       >
