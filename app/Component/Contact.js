@@ -5,7 +5,7 @@ import PhoneInput from 'react-phone-number-input';
 import emailjs from '@emailjs/browser';
 // import { useFormik } from 'Formik';
 // Example import statement
-import { Formik, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 
 // import { signUpSchema } from './index'
 import * as Yup from "yup";
@@ -18,7 +18,7 @@ const initialValues = {
 }
 export const signUpSchema = Yup.object({
     fullname : Yup.string()
-    .matches(/^[A-Za-z ]*$/, "Only characters and spaces are allowed")
+    .matches(/^[A-Za-z]*$/, "Only characters and spaces are allowed")
     .min(5, "Full name must be at least 5 characters")
     .max(25, "Full name must be at most 25 characters")
     .required("Please enter your full name"),

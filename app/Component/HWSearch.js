@@ -91,6 +91,7 @@ const FilterBox = ({ title }) => {
 
 const Filter = ({ title }) => {
   const [selectImage1, setSelectImage1] = useState('Lungs')
+  const [organ, setOrgan] = useState(''); 
   return (
     <div className='mt-4'>
       <div
@@ -279,6 +280,13 @@ const HWSearch = () => {
   const [doctorDataFetched, setDoctorDataFetched] = useState(false);
   const [hospitalDataFetched, setHospitalDataFetched] = useState(false);
   const [apiDataLoaded, setApiDataLoaded] = useState(false);
+
+
+  const [type, setType] = useState('');
+  const [searchFor, setSearchFor] = useState('');
+  const [organ, setOrgan] = useState(''); 
+  const [error, setError] = useState('');
+
   // useEffect(() => {
   //   const fetchApiData = async () => {
   //     let apiUrl = '';
@@ -420,6 +428,35 @@ const HWSearch = () => {
   };
 
 
+  const validateForm = () => {
+    if (!type  || !organ) {
+      setError('All fields are required.');
+      return false;
+    }
+    setError('');
+    return true;
+  };
+
+  const handleSubmit = () => {
+    if (validateForm()) {
+      // Proceed with the form submission or navigation logic
+      console.log('Form submitted:', { type, organ });
+      // You can add navigation logic or API calls here
+    }
+  };
+
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
+    setType(option); // Set the type when an option is selected
+  };
+
+  const handleOptionClick1 = (search) => {
+    setselectedMutiple(search);
+    setSearchFor(search); // Set the type when an option is selected
+  };
+
+  
+
   const handleInputChange = (e) => {
     const input = e.target.value;
     setSelectedZip(input);
@@ -473,14 +510,14 @@ const HWSearch = () => {
         <div className='py-4 hwOType px-4 sm:px-8'>
           <h3 className='font-bold text-[#101426] text-base'>Type</h3>
           <div className='sm:flex grid grid-cols-2 place-content-stretch gap-4 my-2 max-w-[270px] items-center'>
-            <div
+            <div 
               className='px-5 py-3.5 cursor-pointer rounded-lg text-center text-sm'
               style={{
                 border: selectedOption === 'Transplant' ? '1px solid #C8ADFF' : '1px solid #C5CEE0',
                 color: selectedOption === 'Transplant' ? '#6E2FEB' : 'rgb(16 20 28 / 80%)',
                 backgroundColor: selectedOption === 'Transplant' ? '#F5F0FF' : '#ffff'
               }}
-              onClick={() => setSelectedOption('Transplant')}
+              onClick={() => handleOptionClick('Transplant')}
             >
               Transplant
             </div>
@@ -491,7 +528,7 @@ const HWSearch = () => {
                 color: selectedOption === 'Transplant' ? 'rgb(16 20 28 / 80%)' : '#6E2FEB',
                 backgroundColor: selectedOption === 'Cancer' ? '#F5F0FF' : '#ffff'
               }}
-              onClick={() => setSelectedOption('Cancer')}
+              onClick={() => handleOptionClick('Cancer')}
             >
               Cancer
             </div>
@@ -507,9 +544,7 @@ const HWSearch = () => {
                   color: selectedMutiple === 'Doctor' ? '#6E2FEB' : 'rgb(16 20 28 / 80%)',
                   backgroundColor: selectedMutiple === 'Doctor' ? '#F5F0FF' : '#ffff'
                 }}
-                onClick={() => setselectedMutiple('Doctor')}>
-                Doctor</li>
-
+                onClick={() => handleOptionClick1('Doctor')}>Doctor</li>
               <li
                 className='flex-none min-w-[80px] px-5 py-3.5 text-sm cursor-pointer rounded-md min-w-[90px] text-center'
                 style={{
@@ -617,29 +652,33 @@ const HWSearch = () => {
           )}
         </div>
       )}
+
       <div className='px-4 sm:px-8 mb-2'>
         {/* <a href='/Searchresults/'
           className='inline-block text-center px-3 py-3 rounded-md bg-[#6e2feb] shadow-2xl
       hover:bg-[#3c1faf] ease-in duration-300 font-bold text-[#fff] cursor-pointer w-[100%]'
         >Search</a> */}
         <Link className='inline-block text-center px-3 py-3 rounded-md bg-[#6e2feb] shadow-2xl
-      hover:bg-[#3c1faf] ease-in duration-300 font-bold text-[#fff] cursor-pointer w-[100%]'
+          hover:bg-[#3c1faf] ease-in duration-300 font-bold text-[#fff] cursor-pointer w-[100%]'
         href={{
-          pathname: '/searchView',
+          pathname: '/Searchresults',
           query: {
-            search: `type=${type}&searchFor=${searchFor}&organ=${organ}`,
+            search:`type=${type}&searchFor=${searchFor}&organ=${organ}`,
           },
         }}
       >
-        <button style={Object.assign({}, searchButtonStyle, organ && searchButtonHoverStyle)} onClick={handleSubmit}> 
+        <button onClick={handleSubmit}> 
           Search
         </button>
       </Link>
       </div>
+      
+      
 
       <div className=''>
       </div>
     </div>
+    
   );
 };
 
